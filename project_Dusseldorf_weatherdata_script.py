@@ -1,27 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Sep 15 17:02:34 2023
 
-@author: s.akter
 """
 
-# write "%matplotlib qt" command in console panal to get interactive plot
-# then run the command for plotting
+
 import pandas as pd # library for data management
-import numpy as np
+
 import matplotlib
 import matplotlib.pyplot as plt #Library for plotting
-import matplotlib.cm
-import matplotlib.dates as mdates
-from matplotlib import gridspec
-#from datetime import date, datetime, time, timedelta
-#import pytz 
-#from pytz import timezone
-# Handle date time conversions between pandas and matplotlib
-from pandas.plotting import register_matplotlib_converters
-register_matplotlib_converters()
-import glob
-import scipy.signal as ss
+
 
 ### Importing the data
 city = pd.read_excel(r"D:\Project_weather\Wetterstation_city.xlsx", header = 0, na_values=['noData', '99999'], decimal=",")
@@ -40,7 +27,7 @@ y = city['precipitation']
 city_weekly= city.resample('W').mean()
 
 
-## Creating a loop to distinguish the colour
+## Creating a loop to distinguish the colour in case of daily data
 #col = []
 #for val in y:
     #if val > 1:
